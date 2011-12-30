@@ -36,6 +36,7 @@
         <mx:Button label="Save" icon="@Embed('embedded/upload.svg')" disabledIcon="@Embed('embedded/upload_disabled.svg')" styleName="appBarButton"
 			click="SaveManager.saveChanges(theMap.editableLayer.connection);" id="saveButton" enabled="false"/>
         <mx:Button id="helpButton" label="Help" click="new HelpDialog().init();" styleName="appBarButton" />
+        <mx:Button id="latLonButton" label="LatLon" click="new LatLonDialog().init(theController);" styleName="appBarButton" />
         <mx:Spacer width="40"/>
         <mx:Button id="undo" label="Undo" click="MainUndoStack.getGlobalStack().undo();" styleName="appBarButton"
             enabled="{MainUndoStack.getGlobalStack().canUndo()}"
@@ -101,6 +102,7 @@
 		import net.systemeD.potlatch2.help.*;
 		import net.systemeD.potlatch2.options.*;
 		import net.systemeD.potlatch2.utils.*;
+		import net.systemeD.potlatch2.latlon.*;
         import net.systemeD.potlatch2.mygpx.*;
 		import net.systemeD.controls.FloatingAlert;
 		import mx.managers.PopUpManager;
